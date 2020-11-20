@@ -6,7 +6,8 @@
 
         <!-- favicon -->
 
-        <!-- font:  -->
+        <!-- font: Roboto, 100-400-700 -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,700&display=swap" rel="stylesheet">
 
         <!-- icone - fontawesome -->
 
@@ -25,15 +26,18 @@
     <body>
 
         <div id="root">
-            <div class="mail-container" v-if="mailingList.length == 10">
+            <div class="mail-list-container" v-if="mailingList.length == 10">
                 <h1>
-                    Mailing list:
+                    Your mailing list:
                 </h1>
                 <ol>
                     <li v-for="(mail, index) in mailingList">
                         {{ mailingList[index] }};
                     </li>
                 </ol>
+            </div>
+            <div class="mail-download" v-else>
+                <div class="download-item"></div>
             </div>
         </div><!-- END #root -->
 
