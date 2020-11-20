@@ -6,18 +6,20 @@ var app = new Vue({ // VUE INSTANCE
         // OBJ
 
         // ARRAY
+        userMail: [],
     },
     computed: {
 
     },
     mounted() {
-        axios
-            .get("https://flynn.boolean.careers/exercises/api/random/mail")
-            .then( (response) => {
-                console.log(response);
-                console.log(response.data);
-                console.log(response.data.response);
-            })
-        ; // END AXIOS
+        for (var i = 0; i < 10; i++) {
+            axios
+                .get("https://flynn.boolean.careers/exercises/api/random/mail")
+                .then( (mailObj) => {
+                    this.userMail.push(mailObj.data.response);
+                })
+            ; // END AXIOS
+        }
+        console.log(this.userMail);
     },
 });
