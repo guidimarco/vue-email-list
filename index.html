@@ -26,13 +26,13 @@
     <body>
 
         <div id="root">
-            <div class="mail-list-container" v-if="mailingList.length == 10">
+            <div class="mail-list-container" v-if="mailingList.length == numberOfMail">
                 <h1>
                     Your mailing list:
                 </h1>
                 <ol>
-                    <li v-for="(mail, index) in mailingList">
-                        {{ mailingList[index] }};
+                    <li v-for="mail in mailingList">
+                        {{ mail }};
                     </li>
                 </ol>
             </div>

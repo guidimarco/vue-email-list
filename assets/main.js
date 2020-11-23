@@ -2,6 +2,7 @@ var app = new Vue({ // VUE INSTANCE
     el: "#root",
     data: {
         // VAR
+        numberOfMail: 10,
 
         // OBJ
 
@@ -9,8 +10,8 @@ var app = new Vue({ // VUE INSTANCE
         mailingList: [],
     },
     methods: {
-        getMails: function() { // generate 10 mail
-            for (var i = 0; i < 10; i++) {
+        getMails: function() { // generate tot (number of mail) mail
+            for (var i = 0; i < this.numberOfMail; i++) {
                 axios
                     .get("https://flynn.boolean.careers/exercises/api/random/mail")
                     .then( (mailObj) => {
